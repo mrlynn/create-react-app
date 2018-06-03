@@ -201,6 +201,9 @@ module.exports = function(
     cdpath = appPath;
   }
 
+  console.log();
+  console.log('Create a .env file with REACT_APP_MONGODB_ATLAS_URI, and REACT_APP_MONGODB_STITCH_APPID.  You can find examples at http://github.com/mrlynn/create-star-app');
+
   // Change displayed command to yarn instead of yarnpkg
   const displayedCommand = useYarn ? 'yarn' : 'npm';
 

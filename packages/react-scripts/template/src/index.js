@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { StitchClientFactory } from 'mongodb-stitch'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const appId = process.env.REACT_APP_MONGODB_STITCH_APPID;
+let stitchClientPromise = StitchClientFactory.create(appId)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+stitchClientPromise.then(stitchClient => {
+  let props = { stitchClient }
+  ReactDOM.render(
+    <App {...props} />,
+    document.getElementById('root')
+  )
+  registerServiceWorker()
+});
