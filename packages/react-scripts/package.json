@@ -1,7 +1,7 @@
 {
   "name": "mongodb-react-scripts",
   "version": "0.1.0",
-  "description": "Configuration and scripts for Create React App.",
+  "description": "Configuration and scripts for Create Star App.",
   "repository": "mrlynn/create-star-app",
   "license": "MIT",
   "engines": {
